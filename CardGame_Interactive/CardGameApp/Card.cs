@@ -45,6 +45,7 @@ public class Card
 					return "King";
 				
 				default:
+					//For all values 2 - 10
 					return _value.ToString("00");
 			}
 		}
