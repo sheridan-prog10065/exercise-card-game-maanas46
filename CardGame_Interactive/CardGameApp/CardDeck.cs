@@ -90,6 +90,36 @@ public class CardDeck
 		}
 	}
 
+	public bool GetPairOfCards(out Card cardOne, out Card cardTwo)
+	{
+		//Check that there are enough cards in teh deck
+		if (_cardList.Count > 2)
+		{
+			//extract a random card from the deck
+			int randPos = s_randomizer.Next(_cardList.Count);
+
+			//access the card at the random index
+			cardOne = _cardList[randPos];
+
+			//Remove the card from the deck
+			_cardList.RemoveAt(randPos);
+
+			//extract a second random card from the deck
+			randPos = s_randomizer.Next(_cardList.Count);
+			cardTwo = _cardList[randPos];
+			_cardList.RemoveAt(randPos);
+
+			return true;
+		}
+		else
+		{
+			//There are not enough cards left in the deck
+			cardOne = null;
+			cardTwo = null;
+			return false;
+		}
+	}
+
 	#endregion
 }
 

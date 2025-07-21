@@ -18,7 +18,8 @@
 		
 		<!-- Game Play Buttons UI -->
 		<Button x:Name="_btnDealCards" Grid.Row = "1" Grid.Column="0"
-		        Text="Deal"/>
+		        Text="Deal"
+                Clicked="OnDealCards"/>
 		<Button x:Name="_btnSwitchCards" Grid.Row = "1" Grid.Column="1"
 		        Text = "Switch"/>
 		<Button x:Name="_btnPlayCards" Grid.Row = "1" Grid.Column="2"
