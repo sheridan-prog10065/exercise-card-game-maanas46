@@ -9,7 +9,7 @@ public class CardDeck
 	private const byte MAX_CARD_VALUE = 13;
 	public CardDeck()
 	{
-		_cardList = new List<Card>();
+		_cardList = new List<Card>(MAX_SUIT_COUNT* MAX_CARD_VALUE);
 
 		//fill the deck of cards
 		CreateCards();
