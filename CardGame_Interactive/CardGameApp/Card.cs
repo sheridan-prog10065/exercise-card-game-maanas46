@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace CardGameApp;
 
 public class Card
@@ -27,8 +29,24 @@ public class Card
 	{
 		get
 		{
-			//TODO: implement CardName
-			return "";
+			//Determine the name of the card based on its value
+			switch (_value)
+			{
+				case 1:
+					return "Ace";
+				
+				case 11:
+					return "Jack";
+				
+				case 12:
+					return "Queen";
+				
+				case 13:
+					return "King";
+				
+				default:
+					return _value.ToString("00");
+			}
 		}
 	}
 
@@ -36,8 +54,26 @@ public class Card
 	{
 		get
 		{
-			//TODO: implement SuitName
-			return "";
+			//Determine the name of the suit based on its literal value
+			switch (_suit)
+			{
+				case CardSuit.Diamonds:
+					return "Diamonds";
+				
+				case CardSuit.Clubs:
+					return "Clubs";
+				
+				case CardSuit.Hearts:
+					return "Hearts";
+				
+				case CardSuit.Spades:
+					return "Spades";
+				
+				default:
+					//Use defensive programming to identify this as an error
+					Debug.Assert(false, "Unknown suit. Cannot return the name of the suit");
+					return "";
+			}
 		}
 	}
 }
